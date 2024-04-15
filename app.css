@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --primary-color: rgb(67, 140, 208);
+    font-family: sans-serif;
+    min-height: 100vh;
+    background-color: #eee;
+}
+
+button {
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+    padding: 1rem;
+    place-items: center;
+    display: none;
+    z-index: 10;
+}
+
+.modal {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.15);
+    animation: fadeIn .5s ease forwards;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+form input {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+    outline: none;
+}
+
+form .group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form .group:first-of-type {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+form .group:last-of-type {
+    margin-top: 2rem;
+}
+
+form .group p:last-of-type {
+    background-color: #eee;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    display: grid;
+    place-items:center;
+    color: #333;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+form .group p:last-of-type:hover {
+    background-color: #ccc;
+    color: white;
+}
+
+form .group a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+
+
+/* nav */
+nav {
+    background-color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav .wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: var(--primary-color);
+}
+
+nav h1 span {
+    font-weight: 100;
+    opacity: 0.6;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        margin-top: -3rem;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
