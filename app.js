@@ -1,6 +1,14 @@
 const overlay = document.getElementById("overlay");
 const login = document.getElementById("login");
+const overlayCloseBtn = document.querySelector(".group p:last-of-type");
 
-login.addEventListener("click", () => {
-  overlay.style.display = "grid";
-});
+function handleOnClick(event) {
+  if (event.target === login) {
+    overlay.style.display = "grid";
+  } else if (event.target === overlayCloseBtn) {
+    overlay.style.display = "none";
+  }
+}
+
+login.addEventListener("click", handleOnClick);
+overlay.addEventListener("click", handleOnClick);
